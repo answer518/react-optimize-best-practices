@@ -2,6 +2,8 @@ import React, { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ErrorBoundary from './ErrorBoundary'
 
+import './styles.css'
+
 const Header = lazy(() => import(/* webpackChunkName: "header" */'./components/Header'));
 const Body = lazy(() => import(/* webpackChunkName: "body" */'./components/Body'));
 const Footer = lazy(() => import(/* webpackChunkName: "footer" */'./components/Footer'));

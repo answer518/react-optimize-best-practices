@@ -1,11 +1,11 @@
-import { hot } from "react-hot-loader/root";
 import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "./App";
+const rootElement = document.getElementById('root')
 
-const render = (Component) =>
-  // eslint-disable-next-line react/no-render-return-value
-  ReactDOM.render(<Component />, document.getElementById("root"));
-
-render(hot(App));
+if (rootElement.hasChildNodes()) {
+  ReactDOM.hydrate(<App />, rootElement)
+} else {
+  ReactDOM.render(<App />, rootElement);
+}
