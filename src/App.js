@@ -2,22 +2,11 @@ import React, { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ErrorBoundary from './ErrorBoundary'
 
-const Header = lazy(() => import(/* webpackChunkName: "header" */'./components/Header'));
-const Body = lazy(() => import(/* webpackChunkName: "body" */'./components/Body'));
-const Footer = lazy(() => import(/* webpackChunkName: "footer" */'./components/Footer'));
+import './styles.css';
 
+const List = lazy(() => import(/* webpackChunkName: "List" */'./List'))
 
 const loading = () => <>loading...</>
-
-const Home = () => {
-    return (
-        <>
-            <Header />
-            <Body />
-            <Footer />
-        </>
-    )
-}
 
 function App() {
     return (
@@ -25,7 +14,7 @@ function App() {
             <Suspense fallback={loading()}>
                 <Router>
                     <Switch>
-                        <Route exact path="/" component={Home} />
+                        <Route exact path="/" component={Scroll} />
                     </Switch>
                 </Router>
             </Suspense>
