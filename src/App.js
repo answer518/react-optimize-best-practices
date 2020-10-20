@@ -14,7 +14,7 @@ function App() {
             <Suspense fallback={loading()}>
                 <Router>
                     <Switch>
-                        <Route exact path="/" component={Scroll} />
+                        <Route exact path="/" component={List} />
                     </Switch>
                 </Router>
             </Suspense>
